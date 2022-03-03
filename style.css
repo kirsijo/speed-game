@@ -36,8 +36,8 @@ h1 {
 }
 
 .circle {
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
   background-color: white;
   border-radius: 50%;
   display: inline-block;
@@ -46,12 +46,13 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 
 button {
   font-family: inherit;
   font-size: inherit;
-  background-color: #f3f3f3f3;
+  background-color: #f3f3f3;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 2px;
@@ -67,7 +68,6 @@ button {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  opacity: 0.5;
   z-index: 100;
   display: flex;
   justify-content: center;
@@ -80,6 +80,7 @@ button {
   width: 40%;
   height: 25%;
   border-radius: 10px;
+  position: relative;
 }
 
 .modal button {
@@ -91,4 +92,12 @@ button {
 
 #result {
   font-size: 1.5rem;
+}
+
+.circle.active {
+  background-color: #adfc79;
+}
+
+#stop {
+  display: none;
 }
