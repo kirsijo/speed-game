@@ -11,6 +11,8 @@ let score = 0;
 let pace = 1000;
 let rounds = 0;
 let timer;
+let startSound;
+let endSound;
 
 const getRndInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -66,9 +68,14 @@ const startGame = () => {
 
 const endGame = () => {
   console.log("game ended");
+  endGameMusic();
   clearTimeout(timer);
   overlay.style.visibility = "visible";
-  resultText.textContent = `Your final score was ${score}`;
+  if (score >= 10) {
+    resultText.textContent = `Your final score was ${score}`;
+  } else {
+    resultText.textContent = `Your score was ${score}. Too bad. Better luck next time.`;
+  }
 };
 
 const reloadGame = () => {
@@ -79,9 +86,29 @@ startButton.addEventListener("click", startGame);
 stopButton.addEventListener("click", endGame);
 closeButton.addEventListener("click", reloadGame);
 
-/* 
-TODO 
-conditional messages (if and else if statements RE: points), 
-audio https://opengameart.org/content/cc0-music-0
-background image on circle button 
-*/
+function sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function () {
+    this.sound.play();
+  };
+  this.stop = function () {
+    this.sound.pause();
+  };
+}
+
+const startGameMusic = () => {
+  startSound = new sound("sounds/banjos.mp3");
+  startSound.play();
+};
+
+const endGameMusic = () => {
+  endSound = new sound("sounds/gameover.mp3");
+  startSound.stop();
+  endSound.play();
+};
+
+startButton.addEventListener("click", startGameMusic);

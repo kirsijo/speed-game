@@ -7,11 +7,12 @@ body {
   background-image: linear-gradient(to right top, #d87ecc, #adfc79);
   background-attachment: fixed;
   text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 p {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
 }
 
 #score {
@@ -19,8 +20,6 @@ p {
 }
 
 h1 {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 5rem;
   text-align: center;
   margin: 20px 20px;
@@ -29,17 +28,20 @@ h1 {
 .circles {
   display: flex;
   flex-wrap: wrap;
-  width: 800px;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: row;
   text-align: center;
 }
 
 .circle {
-  height: 100px;
-  width: 100px;
+  height: 180px;
+  width: 180px;
   background-color: white;
   border-radius: 50%;
+  border-style: solid;
+  border-width: 4px;
+  border-color: black;
   display: inline-block;
   margin: 2rem;
   cursor: pointer;
@@ -52,11 +54,12 @@ h1 {
 button {
   font-family: inherit;
   font-size: inherit;
-  background-color: #f3f3f3;
+  background-color: #1cd415;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 2px;
   margin: 1rem;
+  padding: 2rem;
   cursor: pointer;
 }
 
@@ -76,7 +79,7 @@ button {
 
 .modal {
   background: white;
-  padding: 2rem;
+  padding: 3rem;
   width: 40%;
   height: 25%;
   border-radius: 10px;
@@ -95,7 +98,8 @@ button {
 }
 
 .circle.active {
-  background-color: #adfc79;
+  background-image: url(raccoon.jpeg);
+  background-position: 100%;
 }
 
 #stop {
