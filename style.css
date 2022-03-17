@@ -101,9 +101,27 @@ button {
 
 .circle.active {
   background-image: url(raccoon.jpeg);
-  background-position: 100%;
+  background-size: contain;
 }
 
 #stop {
   display: none;
+}
+
+@media (max-width: 497px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .circle {
+    height: 110px;
+    width: 110px;
+  }
+  #result {
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+
+  .modal {
+    height: 40%;
+  }
 }
