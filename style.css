@@ -115,7 +115,9 @@ button {
   .circle {
     height: 110px;
     width: 110px;
+    margin: 1rem;
   }
+
   #result {
     font-size: 1rem;
     margin-top: 20px;
