@@ -49,7 +49,7 @@ const startGame = () => {
   active = nextActive;
   console.log("active circle", active);
   timer = setTimeout(startGame, pace);
-  pace = pace - 7;
+  pace = pace - 12;
   if (rounds >= 5) {
     endGame();
   }
