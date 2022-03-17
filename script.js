@@ -49,7 +49,7 @@ const startGame = () => {
   active = nextActive;
   console.log("active circle", active);
   timer = setTimeout(startGame, pace);
-  pace = pace - 10;
+  pace = pace - 7;
   if (rounds >= 5) {
     endGame();
   }
@@ -72,9 +72,9 @@ const endGame = () => {
   clearTimeout(timer);
   overlay.style.visibility = "visible";
   if (score >= 10) {
-    resultText.textContent = `Your final score was ${score}`;
+    resultText.textContent = `Your final score was ${score}. Raccoons love you!`;
   } else {
-    resultText.textContent = `Your score was ${score}. Too bad. Better luck next time.`;
+    resultText.textContent = `Your score was ${score}. Too bad. Raccoons are still hungry.`;
   }
 };
 
